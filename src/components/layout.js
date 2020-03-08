@@ -1,17 +1,21 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import Navbar from "./navbar"
 
 import { rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { location, title, children, lightMode } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     const blogPath = `${__PATH_PREFIX__}/blog/`
+    const photoPath = `${__PATH_PREFIX__}/photos/`
     let header
 
-    if (location.pathname === rootPath || location.pathname === blogPath) {
+    if (location.pathname === rootPath) {
+      header = <div></div>
+    } else if (location.pathname === blogPath) {
       header = (
         <h1
           style={{
@@ -54,7 +58,8 @@ class Layout extends React.Component {
       )
     }
     return (
-      <Wrapper>
+      <Wrapper lightMode={lightMode}>
+        <Navbar lightMode={lightMode} location={location} />
         <div
           style={{
             marginLeft: `auto`,
@@ -66,11 +71,6 @@ class Layout extends React.Component {
           <header>{header}</header>
           <main>{children}</main>
         </div>
-        <Footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </Footer>
       </Wrapper>
     )
   }
@@ -78,11 +78,8 @@ class Layout extends React.Component {
 
 const Wrapper = styled.div`
   min-height: 100vh;
-`
-
-const Footer = styled.footer`
-  text-align: center;
-  margin: 24px;
+  background: ${props => (props.lightMode ? "#fff" : "black")};
+  color: ${props => (props.lightMode ? "black" : "#fff")};
 `
 
 export default Layout
