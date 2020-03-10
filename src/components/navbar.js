@@ -1,18 +1,27 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+
+ const rootPath = `${__PATH_PREFIX__}/`
 const blogPath = `${__PATH_PREFIX__}/blog/`
 const photoPath = `${__PATH_PREFIX__}/photos/`
 
 const Navbar = props => (
   <NavbarWrapper props={props}>
     <NavbarLinks>
-      <StyledBlogLink location={props.location.pathname} to="/blog">
+      <StyledLink location={props.location.pathname} path={rootPath} to="/">
+        Portfolio
+      </StyledLink>
+      <StyledLink location={props.location.pathname} path={blogPath} to="/blog">
         Blog
-      </StyledBlogLink>
-      <StyledPhotosLink location={props.location.pathname} to="/photos">
+      </StyledLink>
+      <StyledLink
+        location={props.location.pathname}
+        path={photoPath}
+        to="/photos"
+      >
         Travel Photography
-      </StyledPhotosLink>
+      </StyledLink>
     </NavbarLinks>
   </NavbarWrapper>
 )
@@ -21,30 +30,27 @@ const NavbarWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100px;
 `
 
 const NavbarLinks = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 500px;
   height: 100%;
 `
 
-const StyledBlogLink = styled(props => <Link {...props} />)`
-  color: ${props => (props.location === blogPath ? "light gray" : "inhereted")};
+const StyledLink = styled(props => <Link {...props} />)`
+  min-width: 100px;
+  text-align: center;
+  padding: 30px 10px 10px 10px;
+  text-decoration: none;
+  color: ${props => (props.location === props.path ? "grey" : "inherit")};
+  border-bottom: none;
+  transition: border-bottom: 2s;
 
   &:hover {
-    background: pink;
-  }
-`
-
-const StyledPhotosLink = styled(props => <Link {...props} />)`
-  color: ${props =>
-    props.location === photoPath ? "light gray" : "inhereted"};
-
-  &:hover {
-    background: pink;
+    border-bottom: 2px solid ${props =>
+      props.lightMode ? "black" : "#f9fff8"};
   }
 `
 
