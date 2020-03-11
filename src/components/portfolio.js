@@ -1,53 +1,80 @@
 import React, { useState } from "react"
+import Projects from "./projects"
 import styled from "styled-components"
 
 const portfolioData = [
   {
     title: "Work",
     a: {
-      title: "stuff",
+      title: "Launchdarkly.com",
+      image: "https://picsum.photos/200",
+      code: "google.com",
+      url: "launchdarkly.com",
+      stack: "js, react, graphql",
     },
     b: {
-      title: "stuff",
+      title: "Opionato survey results",
+      image: "https://picsum.photos/200",
+      code: "google.com",
+      url: "opionato.com",
+      stack: "js, react, graphql",
     },
   },
   {
     title: "Projects",
     a: {
-      title: "stuff",
+      title: "Frontendtrivia.com",
+      image: "https://picsum.photos/200",
+      code: "google.com",
+      url: "google.com",
+      stack: "js, react, graphql",
     },
     b: {
-      title: "stuff",
+      title: "Scouter",
+      image: "https://picsum.photos/200",
+      code: "google.com",
+      url: "google.com",
+      stack: "js, react, graphql",
     },
   },
   {
     title: "Awards",
     a: {
-      title: "stuff",
+      title: "AngelHack 1st Prize",
+      image: "https://picsum.photos/200",
+      code: "google.com",
+      url: "google.com",
+      stack: "js, react, graphql",
     },
     b: {
-      title: "stuff",
+      title: "LaunchDarkly Hackathon Winner",
+      image: "https://picsum.photos/200",
+      code: "google.com",
+      url: "google.com",
+      stack: "js, react, graphql",
     },
   },
 ]
 
 const Portfolio = props => {
-  const [subportfolio, setSubportfolio] = useState(portfolioData[0].title)
+  const [subportfolio, setSubportfolio] = useState(portfolioData[0])
+
   return (
     <PortfolioWrapper lightMode={props.lightMode}>
       <TabWrapper>
         {portfolioData.map(tab => (
           <Tab
             title={tab.title}
-            subportfolio={subportfolio}
+            subportfolio={subportfolio.title}
             onClick={() => {
-              setSubportfolio(tab.title)
+              setSubportfolio(tab)
             }}
           >
             {tab.title}
           </Tab>
         ))}
       </TabWrapper>
+      <Projects currentProjects={subportfolio} />
     </PortfolioWrapper>
   )
 }
@@ -55,7 +82,7 @@ const Portfolio = props => {
 const PortfolioWrapper = styled.div`
   display: flex;
   padding: 20px;
-  justify-content: center;
+  flex-direction: column;
   width: 100%;
   text-decoration: inherit;
   border: 1px solid ${props => (props.lightMode ? "black" : "white")};
