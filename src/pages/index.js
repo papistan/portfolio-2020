@@ -33,9 +33,8 @@ const IndexPage = props => {
           </SocialWrapper>
         </SubHeroWrapper>
         <SubHeroWrapper>
-          <h1 style={{ fontSize: "8rem", marginBottom: "5rem" }}>
-            Jay Papisan{" "}
-          </h1>
+          <p>👋, I'm</p>
+          <Name>Jay Papisan</Name>
           <p>Front End Developer</p>
           <p>Currently working in</p>
         </SubHeroWrapper>
@@ -85,10 +84,21 @@ const SocialWrapper = styled.div`
     padding: 1rem;
     margin-top: 0;
 
+    @media (max-width: 768px) {
+      padding: 0.5rem;
+    }
+
     &:hover {
       text-decoration: underline;
     }
   }
+`
+
+const Name = styled.h1`
+  font-size: 12rem;
+  margin-bottom: 5rem;
+  line-height: 9rem;
+  font-family: Sawarabi Mincho;
 `
 
 export default IndexPage

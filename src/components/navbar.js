@@ -34,15 +34,20 @@ const NavbarWrapper = styled.div`
 
 const NavbarLinks = styled.div`
   display: flex;
-  justify-content: center;
-  width: 500px;
+  justify-content: flex-end;
+  width: 800px;
   height: 100%;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `
 
 const StyledLink = styled(props => <Link {...props} />)`
-  min-width: 100px;
+  min-width: 80px;
   text-align: center;
-  padding: 30px 10px 10px 10px;
+  padding: 30px 5px 10px 5px;
+  margin: 0 10px;
   text-decoration: none;
   color: ${props => (props.location === props.path ? "grey" : "inherit")};
   border-bottom: none;
