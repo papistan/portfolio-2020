@@ -17,7 +17,7 @@ const portfolioData = [
       image: "https://picsum.photos/200",
       code: "google.com",
       url: "opionato.com",
-      stack: "js, react, graphql",
+      stack: "js, react, css",
     },
   },
   {
@@ -25,16 +25,14 @@ const portfolioData = [
     a: {
       title: "Frontendtrivia.com",
       image: "https://picsum.photos/200",
-      code: "google.com",
-      url: "google.com",
-      stack: "js, react, graphql",
+      code: "https://github.com/papistan/FrontEndTrivia",
+      stack: "js, react, redux",
     },
     b: {
       title: "Scouter",
       image: "https://picsum.photos/200",
-      code: "google.com",
-      url: "google.com",
-      stack: "js, react, graphql",
+      code: "https://github.com/papistan/Scoutr/blob/master/README.md",
+      stack: "react native => ruby on rails",
     },
   },
   {
@@ -44,14 +42,14 @@ const portfolioData = [
       image: "https://picsum.photos/200",
       code: "google.com",
       url: "google.com",
-      stack: "js, react, graphql",
+      stack: "ruby on rails",
     },
     b: {
       title: "LaunchDarkly Hackathon Winner",
       image: "https://picsum.photos/200",
       code: "google.com",
       url: "google.com",
-      stack: "js, react, graphql",
+      stack: "js, css + launchdarkly",
     },
   },
 ]
