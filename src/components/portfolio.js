@@ -6,14 +6,14 @@ const portfolioData = [
   {
     title: "Work",
     a: {
-      title: "Launchdarkly.com",
+      title: "launchdarkly.com",
       image: "https://picsum.photos/200",
       code: "google.com",
       url: "launchdarkly.com",
       stack: "js, react, graphql",
     },
     b: {
-      title: "Opionato survey results",
+      title: "opionato survey results",
       image: "https://picsum.photos/200",
       code: "google.com",
       url: "opionato.com",
@@ -23,13 +23,13 @@ const portfolioData = [
   {
     title: "Projects",
     a: {
-      title: "Frontendtrivia.com",
+      title: "frontendtrivia.com",
       image: "https://picsum.photos/200",
       code: "https://github.com/papistan/FrontEndTrivia",
       stack: "js, react, redux",
     },
     b: {
-      title: "Scouter",
+      title: "scouter",
       image: "https://picsum.photos/200",
       code: "https://github.com/papistan/Scoutr/blob/master/README.md",
       stack: "react native => ruby on rails",
@@ -38,14 +38,14 @@ const portfolioData = [
   {
     title: "Awards",
     a: {
-      title: "AngelHack 1st Prize",
+      title: "angelHack 1st prize",
       image: "https://picsum.photos/200",
       code: "google.com",
       url: "google.com",
       stack: "ruby on rails",
     },
     b: {
-      title: "LaunchDarkly Hackathon Winner",
+      title: "launchDarkly hackathon winner",
       image: "https://picsum.photos/200",
       code: "google.com",
       url: "google.com",
@@ -83,6 +83,7 @@ const PortfolioWrapper = styled.div`
   flex-direction: column;
   width: 100%;
   text-decoration: inherit;
+  margin-top: 120px;
   border: 1px solid ${props => (props.lightMode ? "black" : "white")};
 `
 const TabWrapper = styled.div`
