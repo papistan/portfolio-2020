@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import { StaticQuery, graphql } from "gatsby"
+import Image from "gatsby-image"
 
 const ProjectsWrapper = styled.div`
   padding: 20px;
@@ -14,7 +16,7 @@ const ProjectWrapper = styled.div`
   border-radius: 5px;
   display: flex;
   flex-flow: column wrap;
-  width: 300px;
+  width: 340px;
 
   h3 {
     height: 60px;
@@ -33,12 +35,27 @@ const ProjectWrapper = styled.div`
 `
 
 const Project = ({ project }) => (
-  <ProjectWrapper>
-    <h3>{project.title}</h3>
-    <p>{project.stack}</p>
-    <img src={project.image}></img>
-    <a href={project.url}>Live</a>
-  </ProjectWrapper>
+  <StaticQuery
+    query={ProjectQuery}
+    render={data => {
+      return (
+        <ProjectWrapper>
+          <h3>{project.title}</h3>
+          <p>{project.stack}</p>
+          <Image
+            fixed={data[project.image].childImageSharp.fixed}
+            alt={project.title}
+            style={{
+              marginBottom: 0,
+              minWidth: 50,
+            }}
+          />
+          {project.url && <a href={project.url}>live</a>}
+          {project.code && <a href={project.code}>code</a>}
+        </ProjectWrapper>
+      )
+    }}
+  />
 )
 
 const Projects = props => (
@@ -47,5 +64,52 @@ const Projects = props => (
     <Project project={props.currentProjects.b} />
   </ProjectsWrapper>
 )
+
+const ProjectQuery = graphql`
+  query ProjectQuery {
+    launchdarkly: file(absolutePath: { regex: "/launchdarkly.png/" }) {
+      childImageSharp {
+        fixed(width: 300, height: 300) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    opionato: file(absolutePath: { regex: "/opionato.png/" }) {
+      childImageSharp {
+        fixed(width: 300, height: 300) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    angelhack: file(absolutePath: { regex: "/angelhack.png/" }) {
+      childImageSharp {
+        fixed(width: 300, height: 300) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    frontendtrivia: file(absolutePath: { regex: "/frontendtrivia.png/" }) {
+      childImageSharp {
+        fixed(width: 300, height: 300) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    scoutr: file(absolutePath: { regex: "/scoutr.png/" }) {
+      childImageSharp {
+        fixed(width: 300, height: 300) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    moonshot: file(absolutePath: { regex: "/moonshot.png/" }) {
+      childImageSharp {
+        fixed(width: 300, height: 300) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
 
 export default Projects

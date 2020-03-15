@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
- const rootPath = `${__PATH_PREFIX__}/`
+const rootPath = `${__PATH_PREFIX__}/`
 const blogPath = `${__PATH_PREFIX__}/blog/`
 const photoPath = `${__PATH_PREFIX__}/photos/`
 
@@ -12,9 +12,9 @@ const Navbar = props => (
       <StyledLink location={props.location.pathname} path={rootPath} to="/">
         Portfolio
       </StyledLink>
-      <StyledLink location={props.location.pathname} path={blogPath} to="/blog">
+      {/* <StyledLink location={props.location.pathname} path={blogPath} to="/blog">
         Blog
-      </StyledLink>
+      </StyledLink> */}
       <StyledLink
         location={props.location.pathname}
         path={photoPath}
@@ -30,6 +30,7 @@ const NavbarWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  padding-bottom: 2px;
 `
 
 const NavbarLinks = styled.div`
@@ -49,13 +50,13 @@ const StyledLink = styled(props => <Link {...props} />)`
   padding: 30px 5px 10px 5px;
   margin: 0 10px;
   text-decoration: none;
-  color: ${props => (props.location === props.path ? "grey" : "inherit")};
+  color: inherit;
+  opacity: ${props => (props.location === props.path ? "38%" : "100%")};
   border-bottom: none;
   transition: border-bottom: 2s;
 
   &:hover {
-    border-bottom: 2px solid ${props =>
-      props.lightMode ? "black" : "#f9fff8"};
+    text-decoration: underline;
   }
 `
 

@@ -8,7 +8,7 @@ const Switch = styled.div`
   height: 40px;
   border-radius: 50%;
   background: ${props =>
-    props.lightMode ? "linear-gradient(145deg, #d3d5d1, #fafef8)" : "black"};
+    props.lightMode ? "linear-gradient(145deg, #d3d5d1, #fafef8)" : "#121212"};
   box-shadow: ${props =>
     props.lightMode
       ? "7px 7px 14px #c7c9c5, -7px -7px 14px #ffffff"
@@ -17,7 +17,9 @@ const Switch = styled.div`
   &:hover {
     cursor: pointer;
     background: ${props =>
-      props.lightMode ? "linear-gradient(145deg, #d3d5d1, #fafef8)" : "black"};
+      props.lightMode
+        ? "linear-gradient(145deg, #d3d5d1, #fafef8)"
+        : "#121212"};
     box-shadow: ${props =>
       props.lightMode
         ? "inset 0 0 100px 100px rgba(255, 255, 255, 0.25)"
@@ -25,7 +27,7 @@ const Switch = styled.div`
   }
 
   &:active {
-    background: ${props => (props.lightMode ? "#f9fff8" : "black")};
+    background: ${props => (props.lightMode ? "#f9fff8" : "#121212")};
     box-shadow: ${props =>
       props.lightMode
         ? "inset 9px 9px 18px #cfd4ce, inset -9px -9px 18px #ffffff"

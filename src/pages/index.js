@@ -33,7 +33,7 @@ const IndexPage = props => {
           </SocialWrapper>
         </SubHeroWrapper>
         <SubHeroWrapper>
-          <p>👋, I'm</p>
+          <p>Hey, I'm</p>
           <Name>Jay Papisan</Name>
           <p>Front End Developer</p>
           <p>Currently working in</p>
@@ -95,10 +95,10 @@ const SocialWrapper = styled.div`
 `
 
 const Name = styled.h1`
-  font-size: 12rem;
+  font-size: 10rem;
   margin-bottom: 5rem;
   line-height: 9rem;
-  font-family: Sawarabi Mincho;
+  font-family: Montserrat;
 `
 
 export default IndexPage

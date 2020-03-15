@@ -77,7 +77,7 @@ class Layout extends React.Component {
 
 const Wrapper = styled.div`
   min-height: 100vh;
-  background: ${props => (props.lightMode ? "#fff" : "black")};
+  background: ${props => (props.lightMode ? "#fff" : "#121212" )};
   color: ${props => (props.lightMode ? "black" : "#fff")};
 `
 

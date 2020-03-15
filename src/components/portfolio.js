@@ -7,15 +7,13 @@ const portfolioData = [
     title: "Work",
     a: {
       title: "launchdarkly.com",
-      image: "https://picsum.photos/200",
-      code: "google.com",
+      image: "launchdarkly",
       url: "launchdarkly.com",
       stack: "js, react, graphql",
     },
     b: {
       title: "opionato survey results",
-      image: "https://picsum.photos/200",
-      code: "google.com",
+      image: "opionato",
       url: "opionato.com",
       stack: "js, react, css",
     },
@@ -24,13 +22,13 @@ const portfolioData = [
     title: "Projects",
     a: {
       title: "frontendtrivia.com",
-      image: "https://picsum.photos/200",
+      image: "frontendtrivia",
       code: "https://github.com/papistan/FrontEndTrivia",
       stack: "js, react, redux",
     },
     b: {
       title: "scouter",
-      image: "https://picsum.photos/200",
+      image: "scoutr",
       code: "https://github.com/papistan/Scoutr/blob/master/README.md",
       stack: "react native => ruby on rails",
     },
@@ -39,16 +37,13 @@ const portfolioData = [
     title: "Awards",
     a: {
       title: "angelHack 1st prize",
-      image: "https://picsum.photos/200",
-      code: "google.com",
-      url: "google.com",
+      image: "angelhack",
+      url: "https://www.hackathon.io/projects/16197",
       stack: "ruby on rails",
     },
     b: {
       title: "launchDarkly hackathon winner",
-      image: "https://picsum.photos/200",
-      code: "google.com",
-      url: "google.com",
+      image: "moonshot",
       stack: "js, css + launchdarkly",
     },
   },
@@ -98,7 +93,8 @@ const Tab = styled.div`
   text-decoration: none;
   cursor: pointer;
   height: 30px;
-  color: ${props => (props.subportfolio === props.title ? "grey" : "inherit")};
+  color: inherit;
+  opacity: ${props => (props.subportfolio === props.title ? "38%" : "100%")};
   border-bottom: none;
   transition: border-bottom: 1s;
 
