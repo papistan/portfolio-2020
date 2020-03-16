@@ -26,17 +26,44 @@ const IndexPage = props => {
       <Flex>
         <SubHeroWrapper style={{ display: "block", position: "relative" }}>
           <SocialWrapper>
-            <a href="github">github</a>
-            <a href="github">linkedin</a>
-            <a href="github">twitter</a>
-            <a href="github">resume</a>
+            <a
+              href="https://github.com/papistan/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github
+            </a>
+            <a
+              href="https://www.linkedin.com/in/papisan/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin
+            </a>
+            <a
+              href="https://twitter.com/papistan1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              twitter
+            </a>
+            <a
+              href="https://medium.com/@jpapisan"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              medium
+            </a>
+            <a href="/JayPapisanResume2020.pdf">resume</a>
           </SocialWrapper>
         </SubHeroWrapper>
         <SubHeroWrapper>
-          <p>Hey, I'm</p>
+          <p>Hi, I'm</p>
           <Name>Jay Papisan</Name>
           <p>Front End Developer</p>
-          <p>Currently working in</p>
+          <p>
+            Currently having fun working with <span>Gatsby</span>
+          </p>
         </SubHeroWrapper>
       </Flex>
       <Flex>
@@ -62,6 +89,10 @@ const SubHeroWrapper = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
+
+  p {
+    font-family: Courier New, Courier, serif;
+  }
 `
 
 const SocialWrapper = styled.div`
@@ -83,8 +114,8 @@ const SocialWrapper = styled.div`
     color: inherit;
     padding: 1rem;
     margin-top: 0;
-
-    @media (max-width: 768px) {
+    font-family: Courier New, Courier, serif;
+    text-decoration @media (max-width: 768px) {
       padding: 0.5rem;
     }
 
@@ -98,7 +129,7 @@ const Name = styled.h1`
   font-size: 10rem;
   margin-bottom: 5rem;
   line-height: 9rem;
-  font-family: Montserrat;
+  font-family: Montserrat, sanserif;
 `
 
 export default IndexPage

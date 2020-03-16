@@ -51,6 +51,7 @@ const StyledLink = styled(props => <Link {...props} />)`
   margin: 0 10px;
   text-decoration: none;
   color: inherit;
+  font-family: Montserrat, sanserif;
   opacity: ${props => (props.location === props.path ? "38%" : "100%")};
   border-bottom: none;
   transition: border-bottom: 2s;

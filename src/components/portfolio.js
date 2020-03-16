@@ -94,6 +94,7 @@ const Tab = styled.div`
   cursor: pointer;
   height: 30px;
   color: inherit;
+  font-family: Montserrat, sanserif;
   opacity: ${props => (props.subportfolio === props.title ? "38%" : "100%")};
   border-bottom: none;
   transition: border-bottom: 1s;

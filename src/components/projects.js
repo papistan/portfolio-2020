@@ -13,20 +13,30 @@ const ProjectsWrapper = styled.div`
 
 const ProjectWrapper = styled.div`
   padding: 10px;
+  padding-top: 40px;
   border-radius: 5px;
   display: flex;
   flex-flow: column wrap;
   width: 340px;
+  text-align: center;
 
   h3 {
     height: 60px;
     margin-bottom: 0;
     line-height: 1.5rem;
+    font-family: Montserrat, sanserif;
+  }
+
+  p {
+    font-family: Courier New, Courier, serif;
+    padding-bottom: 20px;
   }
 
   a {
     text-decoration: none;
+    padding-top: 10px;
     color: inherit;
+    font-family: Courier New, Courier, serif;
 
     &:hover {
       text-decoration: underline;
