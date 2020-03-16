@@ -62,6 +62,7 @@ const Portfolio = props => {
             onClick={() => {
               setSubportfolio(tab)
             }}
+            tabIndex="0"
           >
             {tab.title}
           </Tab>

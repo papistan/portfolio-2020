@@ -8,8 +8,13 @@ const photoPath = `${__PATH_PREFIX__}/photos/`
 
 const Navbar = props => (
   <NavbarWrapper props={props}>
-    <NavbarLinks>
-      <StyledLink location={props.location.pathname} path={rootPath} to="/">
+    <NavbarLinks role="navigation" aria-label="Main">
+      <StyledLink
+        tabindex="1"
+        location={props.location.pathname}
+        path={rootPath}
+        to="/"
+      >
         Portfolio
       </StyledLink>
       {/* <StyledLink location={props.location.pathname} path={blogPath} to="/blog">
@@ -19,6 +24,7 @@ const Navbar = props => (
         location={props.location.pathname}
         path={photoPath}
         to="/photos"
+        tabindex="0"
       >
         Travel Photography
       </StyledLink>
