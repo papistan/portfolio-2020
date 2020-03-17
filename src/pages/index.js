@@ -75,6 +75,7 @@ const IndexPage = props => {
                       Currently having fun with
                       <br />
                       <TextLoop delay={0} interval={1500}>
+                        <span>...</span>
                         <span>Gatsby</span>
                         <span>GraphQL</span>
                         <span>React</span>

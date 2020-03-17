@@ -23,7 +23,7 @@ const Navbar = props => (
       <StyledLink
         location={props.location.pathname}
         path={photoPath}
-        to="/photos"
+        to="/photos/"
         tabindex="0"
       >
         Travel Photography
