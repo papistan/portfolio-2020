@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import Typing from "react-typing-animation"
-import TextLoop from "react-text-loop"
 import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
@@ -72,18 +71,8 @@ const IndexPage = props => {
                   <Typing delay={1000}>
                     <p>Front End Developer</p>
                     <p>
-                      Currently having fun with
-                      <br />
-                      <TextLoop delay={0} interval={1500}>
-                        <span>...</span>
-                        <span>Gatsby</span>
-                        <span>GraphQL</span>
-                        <span>React</span>
-                        <span>web performance</span>
-                        <span>marketing automation</span>
-                        <span>CSS animations</span>
-                        <span>learning TypeScript</span>
-                      </TextLoop>
+                      I love to work at the intersection of design and
+                      engineering
                     </p>
                   </Typing>
                 </div>
@@ -132,8 +121,8 @@ const IndexPage = props => {
                       color: "inherit",
                     }}
                   >
-                    linkedin{" "}
-                  </a>
+                    linkedin
+                  </a>{" "}
                   and{" "}
                   <a
                     href="https://twitter.com/papistan1"

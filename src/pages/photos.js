@@ -4,14 +4,13 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { TabWrapper, Tab } from "../components/portfolio"
 
-const masonryOptions = {
-  transitionDuration: 0,
-}
+const travelLocations = ["pakistan", "vietnam", "morocco", "tibet", "himalayas"]
 
 const Travel = props => {
   const [lightMode, setLightMode] = useState(false)
-  const [travelLocation, setTravelLocation] = useState("pakistan")
+  const [travelLocation, setTravelLocation] = useState(travelLocations[2])
 
   return (
     <StaticQuery
@@ -19,20 +18,36 @@ const Travel = props => {
       render={data => {
         console.log(data)
 
-        const pakistan = data[travelLocation].edges.map(img => (
+        const selectedPhotos = data[travelLocation].edges.map(img => (
           <li
             style={{
-              width: "250px",
-              marginRight: "10px",
+              width: "380px",
+              marginRight: "5px",
               listStyle: "none",
             }}
+            tabIndex="0"
           >
-            <Img
-              title="Header image"
-              alt={`images of ${travelLocation}`}
-              fixed={img.node.childImageSharp.fixed}
-            />
+            <a href={img.node.childImageSharp.fluid.src}>
+              <Img
+                title="Header image"
+                alt={`images of ${travelLocation}`}
+                fluid={img.node.childImageSharp.fluid}
+              />
+            </a>
           </li>
+        ))
+
+        const locationTabs = travelLocations.map(locationText => (
+          <Tab
+            onClick={() => {
+              setTravelLocation(locationText)
+            }}
+            tabIndex="0"
+            title={travelLocation}
+            subportfolio={locationText}
+          >
+            {locationText}
+          </Tab>
         ))
 
         return (
@@ -41,17 +56,10 @@ const Travel = props => {
               title="Jay Papisan | Front End Developer"
               keywords={[`blog`, `gatsby`, `javascript`, `react`]}
             />
-            <h1>In progress...</h1>
-            <Masonry
-            // className={"my-gallery-class"} // default ''
-            // elementType={"ul"} // default 'div'
-            // options={masonryOptions} // default {}
-            // disableImagesLoaded={false} // default false
-            // updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-            // imagesLoadedOptions={imagesLoadedOptions} // default {}
-            >
-              {pakistan}
-            </Masonry>
+            <TabWrapper style={{ marginBottom: "60px" }}>
+              {locationTabs}
+            </TabWrapper>
+            <Masonry>{selectedPhotos}</Masonry>
           </Layout>
         )
       }}
@@ -65,8 +73,8 @@ const travelQuery = graphql`
       edges {
         node {
           childImageSharp {
-            fixed(width: 250) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 700) {
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
@@ -76,8 +84,8 @@ const travelQuery = graphql`
       edges {
         node {
           childImageSharp {
-            sizes(maxWidth: 600) {
-              ...GatsbyImageSharpSizes_tracedSVG
+            fluid(maxWidth: 700) {
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
@@ -87,8 +95,8 @@ const travelQuery = graphql`
       edges {
         node {
           childImageSharp {
-            sizes(maxWidth: 600) {
-              ...GatsbyImageSharpSizes_tracedSVG
+            fluid(maxWidth: 700) {
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
@@ -98,8 +106,8 @@ const travelQuery = graphql`
       edges {
         node {
           childImageSharp {
-            sizes(maxWidth: 600) {
-              ...GatsbyImageSharpSizes_tracedSVG
+            fluid(maxWidth: 700) {
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
@@ -109,8 +117,8 @@ const travelQuery = graphql`
       edges {
         node {
           childImageSharp {
-            sizes(maxWidth: 600) {
-              ...GatsbyImageSharpSizes_tracedSVG
+            fluid(maxWidth: 700) {
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }

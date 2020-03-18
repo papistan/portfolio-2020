@@ -82,13 +82,14 @@ const PortfolioWrapper = styled.div`
   margin-top: 120px;
   border: 1px solid ${props => (props.lightMode ? "black" : "white")};
 `
-const TabWrapper = styled.div`
+export const TabWrapper = styled.div`
   display: flex;
   justify-content: center;
   height: 30px;
   width: 100%;
+  padding-top: 10px;
 `
-const Tab = styled.div`
+export const Tab = styled.div`
   min-width: 100px;
   text-align: center;
   text-decoration: none;
