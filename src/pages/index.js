@@ -70,10 +70,6 @@ const IndexPage = props => {
                 <div style={{ height: "100px" }}>
                   <Typing delay={1000}>
                     <p>Front End Developer</p>
-                    <p>
-                      I love to work at the intersection of design and
-                      engineering
-                    </p>
                   </Typing>
                 </div>
               </SubHeroWrapper>
