@@ -2,30 +2,16 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-const rootPath = `${__PATH_PREFIX__}/`
-const blogPath = `${__PATH_PREFIX__}/blog/`
-const photoPath = `${__PATH_PREFIX__}/photos/`
-
 const Navbar = props => (
   <NavbarWrapper props={props}>
     <NavbarLinks role="navigation" aria-label="Main">
-      <StyledLink
-        tabindex="1"
-        location={props.location.pathname}
-        path={rootPath}
-        to="/"
-      >
+      <StyledLink tabindex="1" location={props.location} path="/" to="/">
         Portfolio
       </StyledLink>
       {/* <StyledLink location={props.location.pathname} path={blogPath} to="/blog">
         Blog
       </StyledLink> */}
-      <StyledLink
-        location={props.location.pathname}
-        path={photoPath}
-        to="/photos/"
-        tabindex="0"
-      >
+      <StyledLink location={props.location} path="/photos/" to="/photos/" tabindex="0">
         Travel Photography
       </StyledLink>
     </NavbarLinks>

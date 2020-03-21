@@ -19,17 +19,13 @@ const IndexPage = props => {
       query={imageQuery}
       render={data => {
         return (
-          <Layout
-            location={props.location}
-            lightMode={lightMode}
-            title="Jay Papisan | Front End Developer "
-          >
+          <Layout location="/" lightMode={lightMode}>
             <SEO
               title="Jay Papisan | Front End Developer"
               keywords={[`blog`, `gatsby`, `javascript`, `react`]}
             />
             <Flex>
-              <SubHeroWrapper
+              <MetaSocialWrapper
                 style={{ display: "block", position: "relative" }}
               >
                 <SocialWrapper>
@@ -63,13 +59,15 @@ const IndexPage = props => {
                   </a>
                   <a href="/JayPapisanResume2020.pdf">resume</a>
                 </SocialWrapper>
-              </SubHeroWrapper>
+              </MetaSocialWrapper>
               <SubHeroWrapper>
-                <p>Hi, I'm</p>
-                <Name>Jay Papisan</Name>
-                <div style={{ height: "100px" }}>
+                <div style={{ height: "700px" }}>
                   <Typing delay={1000}>
-                    <p>Front End Developer</p>
+                    <p>Hi, I'm</p>
+                    <Name>Jay Papisan</Name>
+                    <div style={{ height: "100px" }}>
+                      <p>Front End Developer</p>
+                    </div>
                   </Typing>
                 </div>
               </SubHeroWrapper>
@@ -166,6 +164,7 @@ const SubHeroWrapper = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
+    padding-bottom: 0;
   }
 
   p {
@@ -198,9 +197,20 @@ const SocialWrapper = styled.div`
       padding: 0.5rem;
     }
 
+    @media (max-width: 768px) {
+      padding-left: 0;
+    }
+
     &:hover {
       text-decoration: underline;
     }
+  }
+`
+
+const MetaSocialWrapper = styled(SubHeroWrapper)`
+  @media (max-width: 768px) {
+    padding-top: 0;
+    padding-bottom: 10rem;
   }
 `
 

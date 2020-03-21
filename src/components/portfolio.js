@@ -77,14 +77,20 @@ const PortfolioWrapper = styled.div`
   display: flex;
   padding: 20px;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
   text-decoration: inherit;
   margin-top: 120px;
   border: 1px solid ${props => (props.lightMode ? "black" : "white")};
+
+  @media (max-width: 400px) {
+    padding-left: 0;
+  }
 `
 export const TabWrapper = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   height: 30px;
   width: 100%;
   padding-top: 10px;

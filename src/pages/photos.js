@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import styled from "styled-components"
 import { TabWrapper, Tab } from "../components/portfolio"
 
 const travelLocations = ["pakistan", "vietnam", "morocco", "tibet", "himalayas"]
@@ -19,14 +20,7 @@ const Travel = props => {
         console.log(data)
 
         const selectedPhotos = data[travelLocation].edges.map(img => (
-          <li
-            style={{
-              width: "380px",
-              marginRight: "5px",
-              listStyle: "none",
-            }}
-            tabIndex="0"
-          >
+          <TileWrapper tabIndex="0">
             <a href={img.node.childImageSharp.fluid.src}>
               <Img
                 title="Header image"
@@ -34,10 +28,10 @@ const Travel = props => {
                 fluid={img.node.childImageSharp.fluid}
               />
             </a>
-          </li>
+          </TileWrapper>
         ))
 
-        const locationTabs = travelLocations.map(locationText => (
+        const locationTabs = travelLocations.map((locationText, i) => (
           <Tab
             onClick={() => {
               setTravelLocation(locationText)
@@ -45,13 +39,14 @@ const Travel = props => {
             tabIndex="0"
             title={travelLocation}
             subportfolio={locationText}
+            key={i}
           >
             {locationText}
           </Tab>
         ))
 
         return (
-          <Layout location={props.location} lightMode={lightMode}>
+          <Layout location="/photos/" lightMode={lightMode}>
             <SEO
               title="Jay Papisan | Front End Developer"
               keywords={[`blog`, `gatsby`, `javascript`, `react`]}
@@ -126,5 +121,12 @@ const travelQuery = graphql`
     }
   }
 `
-
+const TileWrapper = styled.li`
+  width: 380px;
+  margin-right: 5px;
+  list-style: none;
+  @media (max-width: 400px) {
+    max-width: 320px;
+  }
+`
 export default Travel

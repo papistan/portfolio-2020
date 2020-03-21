@@ -9,6 +9,11 @@ const ProjectsWrapper = styled.div`
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+
+  @media (max-width: 400px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `
 
 const ProjectWrapper = styled.div`
