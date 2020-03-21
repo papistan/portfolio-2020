@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import Typing from "react-typing-animation"
 import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
@@ -29,45 +29,47 @@ const IndexPage = props => {
                 style={{ display: "block", position: "relative" }}
               >
                 <SocialWrapper>
-                  <a
-                    href="https://github.com/papistan/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    github
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/papisan/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    linkedin
-                  </a>
-                  <a
-                    href="https://twitter.com/papistan1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    twitter
-                  </a>
-                  <a
-                    href="https://medium.com/@jpapisan"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    medium
-                  </a>
-                  <a href="/JayPapisanResume2020.pdf">resume</a>
+                  <Typing>
+                    <Typing.Delay ms={8000} />
+                    <a
+                      href="https://github.com/papistan/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      github
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/papisan/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      linkedin
+                    </a>
+                    <a
+                      href="https://twitter.com/papistan1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      twitter
+                    </a>
+                    <a
+                      href="https://medium.com/@jpapisan"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      medium
+                    </a>
+                    <a href="/JayPapisanResume2020.pdf">resume</a>
+                  </Typing>
                 </SocialWrapper>
               </MetaSocialWrapper>
               <SubHeroWrapper>
                 <div style={{ height: "700px" }}>
-                  <Typing delay={1000}>
-                    <p>Hi, I'm</p>
-                    <Name>Jay Papisan</Name>
-                    <div style={{ height: "100px" }}>
-                      <p>Front End Developer</p>
-                    </div>
+                  <Typing>
+                    <Typing.Delay ms={1000} />
+                    <Name>Hi, I'm Jay</Name>
+                    <Typing.Delay ms={500} />
+                    <p>A Front End Engineer based in Berkeley</p>
                   </Typing>
                 </div>
               </SubHeroWrapper>
@@ -214,11 +216,22 @@ const MetaSocialWrapper = styled(SubHeroWrapper)`
   }
 `
 
+const neonGlow = keyframes`
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6, 0 0 50px #0073e6, 0 0 60px #0073e6, 0 0 70px #0073e6;
+  }
+`
+
 const Name = styled.h1`
   font-size: 10rem;
   margin-bottom: 5rem;
   line-height: 9rem;
   font-family: Montserrat, sanserif;
+  color: #fff;
+  animation: ${neonGlow} 1s ease-in-out infinite alternate;
 `
 
 export default IndexPage
