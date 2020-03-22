@@ -30,7 +30,7 @@ const IndexPage = props => {
               >
                 <SocialWrapper>
                   <Typing>
-                    <Typing.Delay ms={8000} />
+                    <Typing.Delay ms={6000} />
                     <a
                       href="https://github.com/papistan/"
                       target="_blank"
@@ -67,9 +67,10 @@ const IndexPage = props => {
                 <div style={{ height: "700px" }}>
                   <Typing>
                     <Typing.Delay ms={1000} />
-                    <Name>Hi, I'm Jay</Name>
+                    <p>Hi, I'm</p>
                     <Typing.Delay ms={500} />
-                    <p>A Front End Engineer based in Berkeley</p>
+                    <Name>Jay Papisan</Name>
+                    <p>Front End Engineer</p>
                   </Typing>
                 </div>
               </SubHeroWrapper>
@@ -167,6 +168,7 @@ const SubHeroWrapper = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     padding-bottom: 0;
+    padding-top: 0;
   }
 
   p {
@@ -201,6 +203,7 @@ const SocialWrapper = styled.div`
 
     @media (max-width: 768px) {
       padding-left: 0;
+      display: block;
     }
 
     &:hover {
@@ -211,7 +214,6 @@ const SocialWrapper = styled.div`
 
 const MetaSocialWrapper = styled(SubHeroWrapper)`
   @media (max-width: 768px) {
-    padding-top: 0;
     padding-bottom: 10rem;
   }
 `
@@ -232,6 +234,10 @@ const Name = styled.h1`
   font-family: Montserrat, sanserif;
   color: #fff;
   animation: ${neonGlow} 1s ease-in-out infinite alternate;
+
+  @media (max-width: 730px) {
+    margin-bottom: 2rem;
+  }
 `
 
 export default IndexPage
