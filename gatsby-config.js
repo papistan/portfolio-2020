@@ -43,12 +43,6 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-plugin-google-analytics`,
-            options: {
-              trackingId: "UA-161993998-1",
-            },
-          },
-          {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
@@ -88,6 +82,12 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-161993998-1",
       },
     },
   ],
