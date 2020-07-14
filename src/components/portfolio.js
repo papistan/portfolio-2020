@@ -8,13 +8,13 @@ const portfolioData = [
     a: {
       title: "launchdarkly.com",
       image: "launchdarkly",
-      url: "launchdarkly.com",
+      url: "https://launchdarkly.com/",
       stack: "js, react, graphql",
     },
     b: {
       title: "opionato survey results",
       image: "opionato",
-      url: "opionato.com",
+      url: "https://www.opionato.com/",
       stack: "js, react, css",
     },
   },
